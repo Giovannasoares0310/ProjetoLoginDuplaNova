@@ -1,1 +1,81 @@
-[]
+[
+  {
+    "ContainingType": "AppLogin.Areas.Colaborador.Controllers.API.ClienteApiControlller",
+    "Method": "ListarClientes",
+    "RelativePath": "api/ClienteApiControlller",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppLogin.Areas.Colaborador.Controllers.API.ClienteApiControlller",
+    "Method": "Post",
+    "RelativePath": "api/ClienteApiControlller",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cliente",
+        "Type": "AppLogin.Models.Cliente",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppLogin.Areas.Colaborador.Controllers.API.ClienteApiControlller",
+    "Method": "BuscarPorId",
+    "RelativePath": "api/ClienteApiControlller/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppLogin.Areas.Colaborador.Controllers.API.ClienteApiControlller",
+    "Method": "Atualizar",
+    "RelativePath": "api/ClienteApiControlller/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "cliente",
+        "Type": "AppLogin.Models.Cliente",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AppLogin.Areas.Colaborador.Controllers.API.ClienteApiControlller",
+    "Method": "Excluir",
+    "RelativePath": "api/ClienteApiControlller/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
