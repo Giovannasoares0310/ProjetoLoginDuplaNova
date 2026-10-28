@@ -19,94 +19,94 @@ namespace AppLayoutAspCore.Areas.Colaborador.Controllers.API
         [HttpGet]
         public IActionResult ListarColaboradores()
         {
-            var clientes = _clienteRepository.ObterTodosClientes();
+            var colaboradores = _colaboradorRepository.ObterTodosColaboradores();
 
-            return Ok(clientes);
+            return Ok(colaboradores);
         }
 
         // Cadastrar usuário
         [HttpPost]
-        public IActionResult Post(Cliente cliente)
+        public IActionResult Post(Colaborador colaborador)
         {
-            if (cliente is null)
+            if (colaborador is null)
             {
                 return BadRequest(new
                 {
-                    mensagem = "Os dados do cliente são obrigatórios."
+                    mensagem = "Os dados do colaborador são obrigatórios."
                 });
             }
-            _clienteRepository.Cadastrar(cliente);
+            _colaboradorRepository.Cadastrar(colaborador);
 
             return Ok(new
             {
                 mensagem = "Cadastro realizado com sucesso.",
-                cliente = cliente
+                colaborador = colaborador
             });
         }
-        // GET: api/ClienteApi/1
+        // GET: api/ColaboradorApi/1
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(int id)
         {
-            var cliente = _clienteRepository.ObterCliente(id);
+            var colaborador = _colaboradorRepository.ObterColaborador(id);
 
-            if (cliente == null)
+            if (colaborador == null)
             {
                 return NotFound(new
                 {
-                    mensagem = "Cliente não encontrado."
+                    mensagem = "Colaborador não encontrado."
                 });
             }
 
-            return Ok(cliente);
+            return Ok(colaborador);
         }
 
-        // PUT: api/ClientesApi/1
+        // PUT: api/ColaboradoresApi/1
         [HttpPut("{id}")]
-        public IActionResult Atualizar(int id, Cliente cliente)
+        public IActionResult Atualizar(int id, Colaborador colaborador)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var clienteExistente = _clienteRepository.ObterCliente(id);
+            var colaboradorExistente = _colaboradorRepository.ObterColaborador(id);
 
-            if (clienteExistente == null)
+            if (colaboradorExistente == null)
             {
                 return NotFound(new
                 {
-                    mensagem = "Cliente não encontrado."
+                    mensagem = "Colaborador não encontrado."
                 });
             }
 
-            cliente.Id = id;
+            colaborador.Id = id;
 
-            _clienteRepository.Atualizar(cliente);
+            _colaboradorRepository.Atualizar(colaborador);
 
             return Ok(new
             {
-                mensagem = "Cliente atualizado com sucesso."
+                mensagem = "Colaborador atualizado com sucesso."
             });
         }
-        // DELETE: api/ClientesApi/1
+        // DELETE: api/ColaboradoresApi/1
         [HttpDelete("{id}")]
         public IActionResult Excluir(int id)
         {
-            var cliente = _clienteRepository.ObterCliente(id);
+            var colaborador = _colaboradorRepository.ObterColaborador(id);
 
-            if (cliente == null)
+            if (colaborador == null)
             {
                 return NotFound(new
                 {
-                    mensagem = "Cliente não encontrado."
+                    mensagem = "Colaborador não encontrado."
                 });
             }
 
-            _clienteRepository.Excluir(id);
+            _colaboradorRepository.Excluir(id);
 
             return Ok(new
             {
-                mensagem = "Cliente excluído com sucesso."
+                mensagem = "Colaborador excluído com sucesso."
             });
         }
     }
